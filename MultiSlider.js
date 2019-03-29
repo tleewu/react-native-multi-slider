@@ -96,7 +96,10 @@ export default class MultiSlider extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.onePressed || this.state.twoPressed) {
+    if (
+      (nextProps.min === this.props.min && nextProps.max === this.props.max) &&
+      (this.state.onePressed || this.state.twoPressed)
+    ) {
       return;
     }
 
